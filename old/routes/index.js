@@ -12,11 +12,11 @@ router.get('/', function(req, res) {
     Restaurant.find(),
     Activity.find()
   ])
-  .spread(function(dbHotels, dbRestaurants, dbActivities) {
+  .spread(function(hotels, restaurants, activities) {
       res.render('index', {
-        templateHotels: dbHotels,
-        templateRestaurants: dbRestaurants,
-        templateActivities: dbActivities
+        all_hotels: hotels,
+        all_restaurants: restaurants,
+        all_activities: activities
       });
     })
 
